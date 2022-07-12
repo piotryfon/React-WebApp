@@ -106,7 +106,8 @@ const AppProvider = ({children, isActiveHeaderUnderline}) => {
                 }
             })
             //aktualizuje tabelę po usunięcu użytkownika
-            setData(data.filter(user => user.Id !== id))
+            //setData(data.filter(user => user.Id !== id))
+            updateData()
         }
     }
     //console.log(data);

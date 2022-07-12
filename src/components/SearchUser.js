@@ -22,20 +22,20 @@ const SearchUser = () => {
         handleOnClickDeleteUser
      } = useContext(AppContext);
 
-    const selectedData = data.filter(u => u.Name.trim().toLowerCase().includes(value.toLowerCase()))
+    const selectedData = data.filter(u => u.name.trim().toLowerCase().includes(value.toLowerCase()))
         .map(user =>
-            <tr key={user.Id} >
-                <td>{user.Id}</td>
-                <td>{user.Name}</td>
-                <td>{user.EmailAddress}</td>
-                <td><button className="btn btn-danger btn-sm" onClick={() => handleOnClickDeleteUser(user.Id)}>
+            <tr key={user.id} >
+                <td>{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.emailAddress}</td>
+                <td><button className="btn btn-danger btn-sm" onClick={() => handleOnClickDeleteUser(user.id)}>
                     Delete
                 </button>
-                    <button className="btn btn-warning btn-sm" onClick={() => handleShowModalAndSetId(user.Id)}>
+                    <button className="btn btn-warning btn-sm" onClick={() => handleShowModalAndSetId(user.id)}>
                         Edit
                     </button>
                     <ModalEdit isShowing={isShowingEditModal} modalId={modalId} hide={handleHideEditModal}
-                        submit={handleSubmitEditModal} userId={user.Id} userName={user.Name} userEmail={user.EmailAddress} />
+                        submit={handleSubmitEditModal} userId={user.id} userName={user.name} userEmail={user.emailAddress} />
                 </td>
             </tr>
         )
